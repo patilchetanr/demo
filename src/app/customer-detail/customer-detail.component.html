@@ -1,0 +1,35 @@
+
+<div>
+  <button (click)="retrive()"> Retrive Customer</button>
+</div>
+
+<div *ngIf="customerResultAvailable">
+  <form [formGroup]="customerForm">
+    <div class="form-field">
+      <label> First Name: </label>
+      <input type="text" formControlName="firstName">
+    </div>
+
+    <div class="form-field">
+      <label> Last Name: </label>
+      <input type="text" formControlName="lastName">
+    </div>
+
+    <div class="form-field">
+      <label> Phone: </label>
+      <input type="text" formControlName="phone">
+    </div>
+
+    <div class="form-field">
+      <label> Email: </label>
+      <input type="text" formControlName="email">
+    </div>
+
+    <div class="form-field">
+      <label> Age: </label>
+      <input type="text" formControlName="age">
+    </div>
+  </form>
+
+  <button [disabled]="!formUpdated" (click)="update()"> Update Customer</button>
+</div>
