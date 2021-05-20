@@ -1,35 +1,38 @@
 
-<div>
-  <button (click)="retrive()"> Retrive Customer</button>
+<div class="search-box">
+  <input type="number" class="form-control" placeholder="Search Customer Using Id">
+  <button class="btn btn-primary" (click)="retrive()"> Retrive Customer</button>
 </div>
 
-<div *ngIf="customerResultAvailable">
+<div *ngIf="customerResultAvailable" style="padding: 1rem">
   <form [formGroup]="customerForm">
     <div class="form-field">
       <label> First Name: </label>
-      <input type="text" formControlName="firstName">
+      <input class="form-control" type="text" formControlName="firstName">
     </div>
 
     <div class="form-field">
       <label> Last Name: </label>
-      <input type="text" formControlName="lastName">
+      <input class="form-control" type="text" formControlName="lastName">
     </div>
 
     <div class="form-field">
       <label> Phone: </label>
-      <input type="text" formControlName="phone">
+      <input class="form-control" type="number" formControlName="phone">
     </div>
 
     <div class="form-field">
       <label> Email: </label>
-      <input type="text" formControlName="email">
+      <input class="form-control" type="email" formControlName="email">
     </div>
 
     <div class="form-field">
       <label> Age: </label>
-      <input type="text" formControlName="age">
+      <input class="form-control" type="number" formControlName="age">
     </div>
   </form>
 
-  <button [disabled]="!formUpdated" (click)="update()"> Update Customer</button>
+  <div style="margin-top: 1.5rem">
+    <button class="btn btn-primary" [disabled]="!formUpdated" (click)="update()"> Update Customer</button>
+  </div>
 </div>

@@ -1,12 +1,22 @@
+.search-box {
+  padding: 1rem;
+  display: flex;
+  button {
+    margin-left: 1rem;
+  }
+}
+
 .input-box {
   width: 10rem;
 }
 .form-field {
-  padding-top: 1rem;
+  display: flex;
+  padding-top: 0.8rem;
   label {
     font-size: 1rem;
     font-weight: 600;
-    width: 4rem;
+    width: 10rem;
+    align-self: center;
   }
 }
 

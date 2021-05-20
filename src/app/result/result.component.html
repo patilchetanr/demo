@@ -1,3 +1,8 @@
-<p>Customer Record has been updated Sucessfully/p>
+<p> Customer Record for {{userName}} has been updated Successfully </p>
 
-{{resultString}}
+<div style="display: grid;">
+  <div *ngFor="let attribute of attributeNames">
+    <label style="width: 10rem;font-weight: bolder"> {{camel2title(attribute)}} : </label>
+    <label> {{getValue(attribute)}}</label>
+  </div>
+</div>
