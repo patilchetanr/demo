@@ -1,6 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
+import {ApiService} from '../api.service';
+import {Router} from '@angular/router';
+import {SessionService} from '../session.service';
+
+const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+
+class MockSessionService {
+  customerDetail = {};
+}
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -8,7 +17,8 @@ describe('ResultComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultComponent ]
+      declarations: [ ResultComponent ],
+      providers: [{provide: Router, useValue: routerSpy}, {provide: SessionService, useClass: MockSessionService}]
     })
     .compileComponents();
   });
@@ -16,6 +26,7 @@ describe('ResultComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ResultComponent);
     component = fixture.componentInstance;
+
     fixture.detectChanges();
   });
 
